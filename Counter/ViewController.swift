@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     var count = 0
-    // var isClick: Bool = false
     
     @IBOutlet weak var counterLabel: UILabel!
     
