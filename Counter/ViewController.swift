@@ -8,12 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var count = 0
+    // var isClick: Bool = false
+    
+    @IBOutlet weak var counterLabel: UILabel!
+    
+    @IBOutlet weak var clickButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        counterLabel.text = "Значение счетчика: \(count)"
+        clickButton.layer.cornerRadius = 14
     }
-
-
+    
+    
+    @IBAction func tappedCountButton(_ sender: Any) {
+        count += 1
+        counterLabel.text = "Значение счетчика: \(count)"
+    }
 }
-
