@@ -59,7 +59,7 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="tappedPluseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ndp-EP-r3i"/>
+                                            <action selector="tappedPlusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9um-4a-9jM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -106,7 +106,7 @@
                         <outlet property="counterLabel" destination="3mR-Tp-eY8" id="6It-5C-I1c"/>
                         <outlet property="logTextView" destination="P15-PP-1yd" id="TkC-lc-9fI"/>
                         <outlet property="minusButton" destination="m0H-n6-hOj" id="oYL-ZZ-I2a"/>
-                        <outlet property="pluseButton" destination="fV5-xF-Te0" id="oYu-QF-Iet"/>
+                        <outlet property="plusButton" destination="fV5-xF-Te0" id="xdH-xW-vx2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

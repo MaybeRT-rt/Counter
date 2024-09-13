@@ -7,20 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    var count = 0
+    //MARK: @IBOutlet
+    @IBOutlet weak private var counterLabel: UILabel!
+    @IBOutlet weak private var clickButton: UIButton!
     
-    //MARK: UI
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var clickButton: UIButton!
+    @IBOutlet weak private var buttonStack: UIStackView!
+    @IBOutlet weak private var minusButton: UIButton!
+    @IBOutlet weak private var plusButton: UIButton!
+    @IBOutlet weak private var logTextView: UITextView!
     
-    @IBOutlet weak var buttonStack: UIStackView!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var pluseButton: UIButton!
-    @IBOutlet weak var logTextView: UITextView!
+    private var count = 0
     
-    //MARK: - Life Cicle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         counterLabel.text = "\(count)"
@@ -28,20 +28,20 @@ class ViewController: UIViewController {
         configureButtons()
     }
     
-    func configureButtons() {
+   private func configureButtons() {
         clickButton.layer.cornerRadius = 14
         minusButton.layer.cornerRadius = 14
-        pluseButton.layer.cornerRadius = 14
+        plusButton.layer.cornerRadius = 14
     }
     
     //MARK: - Actions
-    @IBAction func tappedPluseButton(_ sender: Any) {
+    @IBAction private func tappedPlusButton(_ sender: Any) {
         count += 1
         counterLabel.text =  "\(count)"
         updateHistory(with: "значение изменено на +1")
     }
     
-    @IBAction func tappedMinusButton(_ sender: Any) {
+    @IBAction private func tappedMinusButton(_ sender: Any) {
         guard count != 0 else {
             updateHistory(with: "попытка уменьшить значение счётчика ниже 0")
             return
@@ -51,18 +51,17 @@ class ViewController: UIViewController {
         updateHistory(with: "значение изменено на -1")
     }
     
-    @IBAction func tappedRefreshButton(_ sender: Any) {
+    @IBAction private func tappedRefreshButton(_ sender: Any) {
         count = 0
         counterLabel.text =  "\(count)"
         updateHistory(with: "значение сброшено")
     }
-
 }
 
 // MARK: - extensions
 extension ViewController {
     
-    func updateHistory(with text: String) {
+    private func updateHistory(with text: String) {
         let currentDate = Date() // хранит текущие дату и время
         let dateFormatter = DateFormatter() // для преобразования времени в конкретный формат
         dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss" // устанавливаем формат
@@ -71,5 +70,4 @@ extension ViewController {
         let newEntry = "\n[\(formattedDate)]: \(text)"
         logTextView.text += newEntry
     }
-    
 }
