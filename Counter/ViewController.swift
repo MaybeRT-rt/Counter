@@ -9,6 +9,8 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    private var count = 0
+    
     //MARK: @IBOutlet
     @IBOutlet weak private var counterLabel: UILabel!
     @IBOutlet weak private var clickButton: UIButton!
@@ -17,8 +19,6 @@ final class ViewController: UIViewController {
     @IBOutlet weak private var minusButton: UIButton!
     @IBOutlet weak private var plusButton: UIButton!
     @IBOutlet weak private var logTextView: UITextView!
-    
-    private var count = 0
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
