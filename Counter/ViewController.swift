@@ -14,7 +14,6 @@ final class ViewController: UIViewController {
     //MARK: @IBOutlet
     @IBOutlet weak private var counterLabel: UILabel!
     @IBOutlet weak private var clickButton: UIButton!
-    
     @IBOutlet weak private var buttonStack: UIStackView!
     @IBOutlet weak private var minusButton: UIButton!
     @IBOutlet weak private var plusButton: UIButton!
@@ -28,7 +27,7 @@ final class ViewController: UIViewController {
         configureButtons()
     }
     
-   private func configureButtons() {
+    private func configureButtons() {
         clickButton.layer.cornerRadius = 14
         minusButton.layer.cornerRadius = 14
         plusButton.layer.cornerRadius = 14
