@@ -9,7 +9,11 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    private var count = 0
+    private var count = 0 {
+        didSet {
+            UserDefaults.standard.set(count, forKey: "count")
+        }
+    }
     
     //MARK: @IBOutlet
     @IBOutlet weak private var counterLabel: UILabel!
@@ -22,6 +26,11 @@ final class ViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let count = UserDefaults.standard.value(forKey: "count") as? Int {
+            self.count = count
+        }
+        
         counterLabel.text = "\(count)"
         logTextView.isEditable = false
         configureButtons()
